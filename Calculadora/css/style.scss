@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(45deg, rgb(24, 24, 173), rgb(242, 242, 247));
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(187, 130, 130);
+    background-color:rgb(167, 155, 155);
+    #display{
+        color: #0a1e23;
+        margin: 0 10px;
+        height: 80px;
+        width: auto;
+        font-size: 50px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+    }
+    #clear{
+        background-color: #140aa0;
+        color: white;
+    }
+    .btn-number{
+        background-color: rgb(238, 162, 162);
+        color: blue;
+    }
+    .btn-operator{
+        background-color: rgb(73, 141, 73);
+        color: white;
+    }
+    .btn-equal{
+        background-color: orangered;
+    }
+    #equal{
+        height: 130px;
+    }
+    &.dark{
+        background-color: blanchedalmond;
+        #display{
+            color:#0a1e23;
+        }
+        #clear{
+            background-color: aqua;
+            color: black;
+        }
+        .btn-number{
+            background-color: #140aa0;
+            color: crimson;            
+        }
+        .btn-operator{
+            background-color: yellow;
+            color: red;
+        }
+    }
+}
+.theme-toggler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1;
+    &::before{
+        position: absolute;
+        content: "";
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: aliceblue;
+        z-index: -1;
+    }
+}
+.theme-toggler .active{
+    color: whitesmoke;
+    &::before{
+        background-color: grey;
+    }
+}
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+
+
